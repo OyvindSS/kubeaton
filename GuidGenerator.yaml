@@ -13,7 +13,7 @@ spec:
         app: guidgenerator
     spec:
       containers:
-        - image: guidgenerator:latest
+        - image: oyvindss/guidgenerator:latest
           name: guidgenerator
       volumes:
         - name: raw-data

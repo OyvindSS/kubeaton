@@ -3,7 +3,7 @@
 var di = Directory.CreateDirectory("NewGuids");
 while (true)
 {
-    var guid = new Guid().ToString();
+    var guid = Guid.NewGuid().ToString();
     File.Create(Path.Combine(di.FullName, guid));
     Thread.Sleep(5000);
 }

@@ -13,7 +13,7 @@ spec:
         app: guidworker
     spec:
       containers:
-        - image: guidworker:latest
+        - image: oyvindss/guidworker:latest
           name: guidworker
       volumes:
         - name: raw-data
