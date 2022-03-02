@@ -15,6 +15,9 @@ spec:
       containers:
         - image: oyvindss/guidgenerator:latest
           name: guidgenerator
+          volumeMounts:
+            - mountPath: /guids
+              name: raw-data
       volumes:
         - name: raw-data
           persistentVolumeClaim:
