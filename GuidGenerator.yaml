@@ -17,8 +17,8 @@ spec:
           name: guidgenerator
           volumeMounts:
             - mountPath: /guids
-              name: raw-data
+              name: guid-data
       volumes:
-        - name: raw-data
+        - name: guid-data
           persistentVolumeClaim:
-            claimName: raw-data-pvc
+            claimName: guid-data-pvc
