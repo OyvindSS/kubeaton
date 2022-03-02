@@ -1,12 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
-
-var di = Directory.CreateDirectory("MovedGuids");
+var diNewGuids = Directory.CreateDirectory("../guids/NewGuids");
+var diMovedGuids = Directory.CreateDirectory("../guids/MovedGuids");
 while (true)
 {
-    var file = Directory.EnumerateFiles("NewGuids").FirstOrDefault();
+    var file = Directory.EnumerateFiles("../guids/NewGuids").FirstOrDefault();
     if (file != null)
     {
-        File.Move(file, Path.Combine(di.FullName, Path.GetFileName(file)));
+        File.Move(file, Path.Combine(diMovedGuids.FullName, Path.GetFileName(file)));
     }
     Thread.Sleep(7500);
 }
