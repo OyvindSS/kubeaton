@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: guidworker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: guidworker
+  template:
+    metadata:
+      labels:
+        app: guidworker
+    spec:
+      containers:
+        - image: guidworker:latest
+          name: guidworker
+      volumes:
+        - name: raw-data
+          persistentVolumeClaim:
+            claimName: raw-data-pvc

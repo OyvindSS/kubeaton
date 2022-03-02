@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: guidgenerator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: guidgenerator
+  template:
+    metadata:
+      labels:
+        app: guidgenerator
+    spec:
+      containers:
+        - image: guidgenerator:latest
+          name: guidgenerator
+      volumes:
+        - name: raw-data
+          persistentVolumeClaim:
+            claimName: raw-data-pvc
